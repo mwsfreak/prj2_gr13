@@ -39,28 +39,28 @@ X10_RX::X10_RX(int address)
 	startArray_[3] = 0;
 	
 	// adresse delen startArray initialiseres
-	if (address == 1)
+	if (address == 0)
 	{
 		startArray_[4] = 0;
 		startArray_[5] = 1;
 		startArray_[6] = 0;
 		startArray_[7] = 1;
 	}
-	else if (address == 2)
+	else if (address == 1)
 	{
 		startArray_[4] = 0;
 		startArray_[5] = 1;
 		startArray_[6] = 1;
 		startArray_[7] = 0;
 	}
-	else if (address == 3)
+	else if (address == 2)
 	{
 		startArray_[4] = 1;
 		startArray_[5] = 0;
 		startArray_[6] = 0;
 		startArray_[7] = 1;
 	}
-	else if (address == 4)
+	else if (address == 3)
 	{
 		startArray_[4] = 1;
 		startArray_[5] = 0;
