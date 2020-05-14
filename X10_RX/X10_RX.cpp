@@ -9,9 +9,9 @@
 
 X10_RX::X10_RX(int address)
 {
-	EICRA = 0b00000001; //Interrupt 0 aktiveres pï¿½ rising edge og falling edge
+	EICRA = 0b00000001; //Interrupt 0 aktiveres på rising edge og falling edge
 	EIMSK = 0b00000001; // Interrupt 0 enables
-	DDRH &= ~(1<<5); // PORTH5 (pin 8) sï¿½ttes til at vï¿½re input 
+	DDRH &= ~(1<<5); // PORTH5 (pin 8) sættes til at være input 
 	
 	bitCnt_ = 0;
 	receivingData_ = false;
@@ -39,28 +39,28 @@ X10_RX::X10_RX(int address)
 	startArray_[3] = 0;
 	
 	// adresse delen startArray initialiseres
-	if (address == 0)
+	if (address == 1)
 	{
 		startArray_[4] = 0;
 		startArray_[5] = 1;
 		startArray_[6] = 0;
 		startArray_[7] = 1;
 	}
-	else if (address == 1)
+	else if (address == 2)
 	{
 		startArray_[4] = 0;
 		startArray_[5] = 1;
 		startArray_[6] = 1;
 		startArray_[7] = 0;
 	}
-	else if (address == 2)
+	else if (address == 3)
 	{
 		startArray_[4] = 1;
 		startArray_[5] = 0;
 		startArray_[6] = 0;
 		startArray_[7] = 1;
 	}
-	else if (address == 3)
+	else if (address == 4)
 	{
 		startArray_[4] = 1;
 		startArray_[5] = 0;
@@ -76,13 +76,13 @@ bool X10_RX::dataReady(bool dataBit)
 	
 	if (receivingData_ == false)
 	{
-		// Forskyd startBuffer 1 til hï¿½jre
+		// Forskyd startBuffer 1 til højre
 		for (int i = 0; i < 7; i++)
 		{
 			startBuffer_[i] = startBuffer_[i + 1];
 		}
 		
-		// Indsï¿½t det databit som er modtaget pï¿½ den bagerste plads
+		// Indsæt det databit som er modtaget på den bagerste plads
 		startBuffer_[7] = dataBit;
 
 		// Kontroller om arrayet er = startArray
