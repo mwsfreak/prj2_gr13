@@ -14,7 +14,7 @@ char state = 'I'; // I = Idle, R = Receiving
 
 int main(void)
 {		
-	X10_RX lampReceiver(3);
+	X10_RX lampReceiver(2);
 	lampDriver myLamp;
 	bool newDataReady = false; //Fortæller hvornår der er et helt datasæt uden fejl klar
 	char dataChar = 0; // char som indeholder det sidst modtagne data
