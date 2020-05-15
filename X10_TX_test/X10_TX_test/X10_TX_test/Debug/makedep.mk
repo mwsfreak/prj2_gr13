@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-main_x10tx_test.cpp
+..\..\..\X10_TX\X10_TX.cpp
 
-X10_TX.cpp
+main_x10tx_test.cpp
 
