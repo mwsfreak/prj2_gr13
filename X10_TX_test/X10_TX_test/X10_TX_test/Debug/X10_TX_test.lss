@@ -3,31 +3,31 @@ X10_TX_test.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800200  00800200  000003ec  2**0
+  0 .data         00000000  00800200  00800200  000003f6  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000378  00000000  00000000  00000074  2**1
+  1 .text         00000382  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000013  00800200  00800200  000003ec  2**0
+  2 .bss          00000013  00800200  00800200  000003f6  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  000003ec  2**0
+  3 .comment      00000030  00000000  00000000  000003f6  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000041c  2**2
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000428  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000060  00000000  00000000  0000045c  2**0
+  5 .debug_aranges 00000060  00000000  00000000  00000468  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   0000127a  00000000  00000000  000004bc  2**0
+  6 .debug_info   0000127a  00000000  00000000  000004c8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000ed6  00000000  00000000  00001736  2**0
+  7 .debug_abbrev 00000ed6  00000000  00000000  00001742  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000006bd  00000000  00000000  0000260c  2**0
+  8 .debug_line   000006eb  00000000  00000000  00002618  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  000000dc  00000000  00000000  00002ccc  2**2
+  9 .debug_frame  000000dc  00000000  00000000  00002d04  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    0000070a  00000000  00000000  00002da8  2**0
+ 10 .debug_str    0000070a  00000000  00000000  00002de0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000325  00000000  00000000  000034b2  2**0
+ 11 .debug_loc    00000325  00000000  00000000  000034ea  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000040  00000000  00000000  000037d7  2**0
+ 12 .debug_ranges 00000040  00000000  00000000  0000380f  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -35,7 +35,7 @@ Disassembly of section .text:
 00000000 <__vectors>:
    0:	72 c0       	rjmp	.+228    	; 0xe6 <__ctors_end>
    2:	00 00       	nop
-   4:	82 c1       	rjmp	.+772    	; 0x30a <__vector_1>
+   4:	87 c1       	rjmp	.+782    	; 0x314 <__vector_1>
    6:	00 00       	nop
    8:	8f c0       	rjmp	.+286    	; 0x128 <__bad_interrupt>
    a:	00 00       	nop
@@ -149,7 +149,7 @@ Disassembly of section .text:
 	...
 
 000000e4 <__ctors_start>:
-  e4:	ae 01       	movw	r20, r28
+  e4:	b3 01       	movw	r22, r6
 
 000000e6 <__ctors_end>:
   e6:	11 24       	eor	r1, r1
@@ -185,14 +185,14 @@ Disassembly of section .text:
  112:	01 09       	sbc	r16, r1
  114:	80 2f       	mov	r24, r16
  116:	fe 01       	movw	r30, r28
- 118:	25 d1       	rcall	.+586    	; 0x364 <__tablejump2__>
+ 118:	2a d1       	rcall	.+596    	; 0x36e <__tablejump2__>
  11a:	c2 37       	cpi	r28, 0x72	; 114
  11c:	d1 07       	cpc	r29, r17
  11e:	80 e0       	ldi	r24, 0x00	; 0
  120:	08 07       	cpc	r16, r24
  122:	b1 f7       	brne	.-20     	; 0x110 <__do_global_ctors+0xa>
  124:	ab d0       	rcall	.+342    	; 0x27c <main>
- 126:	26 c1       	rjmp	.+588    	; 0x374 <_exit>
+ 126:	2b c1       	rjmp	.+598    	; 0x37e <_exit>
 
 00000128 <__bad_interrupt>:
  128:	6b cf       	rjmp	.-298    	; 0x0 <__vectors>
@@ -508,174 +508,189 @@ void X10_TX::x10_tx_interrupt() {		//Interruptrutine for Zerocrossing - Tjek syn
  27a:	08 95       	ret
 
 0000027c <main>:
+
 X10_TX X10TX_obj;
 
 int main(void) {
 	
+	DDRB |= (1 << 7);
+ 27c:	27 9a       	sbi	0x04, 7	; 4
+	
 	while(1) {
 		X10TX_obj.transmit(0b10, 0b0010);
- 27c:	42 e0       	ldi	r20, 0x02	; 2
- 27e:	62 e0       	ldi	r22, 0x02	; 2
- 280:	80 e0       	ldi	r24, 0x00	; 0
- 282:	92 e0       	ldi	r25, 0x02	; 2
- 284:	82 df       	rcall	.-252    	; 0x18a <_ZN6X10_TX8transmitEcc>
+ 27e:	42 e0       	ldi	r20, 0x02	; 2
+ 280:	62 e0       	ldi	r22, 0x02	; 2
+ 282:	80 e0       	ldi	r24, 0x00	; 0
+ 284:	92 e0       	ldi	r25, 0x02	; 2
+ 286:	81 df       	rcall	.-254    	; 0x18a <_ZN6X10_TX8transmitEcc>
+		PORTB |= (1 << 7);
+ 288:	2f 9a       	sbi	0x05, 7	; 5
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 286:	2f ef       	ldi	r18, 0xFF	; 255
- 288:	83 ed       	ldi	r24, 0xD3	; 211
- 28a:	90 e3       	ldi	r25, 0x30	; 48
- 28c:	21 50       	subi	r18, 0x01	; 1
- 28e:	80 40       	sbci	r24, 0x00	; 0
- 290:	90 40       	sbci	r25, 0x00	; 0
- 292:	e1 f7       	brne	.-8      	; 0x28c <main+0x10>
- 294:	00 c0       	rjmp	.+0      	; 0x296 <main+0x1a>
- 296:	00 00       	nop
-	
+ 28a:	2f ef       	ldi	r18, 0xFF	; 255
+ 28c:	83 ed       	ldi	r24, 0xD3	; 211
+ 28e:	90 e3       	ldi	r25, 0x30	; 48
+ 290:	21 50       	subi	r18, 0x01	; 1
+ 292:	80 40       	sbci	r24, 0x00	; 0
+ 294:	90 40       	sbci	r25, 0x00	; 0
+ 296:	e1 f7       	brne	.-8      	; 0x290 <main+0x14>
+ 298:	00 c0       	rjmp	.+0      	; 0x29a <main+0x1e>
+ 29a:	00 00       	nop
 		_delay_ms(1000);
+		
 		X10TX_obj.transmit(0b10, 0b0001);
- 298:	41 e0       	ldi	r20, 0x01	; 1
- 29a:	62 e0       	ldi	r22, 0x02	; 2
- 29c:	80 e0       	ldi	r24, 0x00	; 0
- 29e:	92 e0       	ldi	r25, 0x02	; 2
- 2a0:	74 df       	rcall	.-280    	; 0x18a <_ZN6X10_TX8transmitEcc>
- 2a2:	2f ef       	ldi	r18, 0xFF	; 255
- 2a4:	83 ed       	ldi	r24, 0xD3	; 211
- 2a6:	90 e3       	ldi	r25, 0x30	; 48
- 2a8:	21 50       	subi	r18, 0x01	; 1
- 2aa:	80 40       	sbci	r24, 0x00	; 0
- 2ac:	90 40       	sbci	r25, 0x00	; 0
- 2ae:	e1 f7       	brne	.-8      	; 0x2a8 <main+0x2c>
- 2b0:	00 c0       	rjmp	.+0      	; 0x2b2 <main+0x36>
- 2b2:	00 00       	nop
+ 29c:	41 e0       	ldi	r20, 0x01	; 1
+ 29e:	62 e0       	ldi	r22, 0x02	; 2
+ 2a0:	80 e0       	ldi	r24, 0x00	; 0
+ 2a2:	92 e0       	ldi	r25, 0x02	; 2
+ 2a4:	72 df       	rcall	.-284    	; 0x18a <_ZN6X10_TX8transmitEcc>
+		PORTB &= ~(1 << 7);
+ 2a6:	2f 98       	cbi	0x05, 7	; 5
+ 2a8:	2f ef       	ldi	r18, 0xFF	; 255
+ 2aa:	83 ed       	ldi	r24, 0xD3	; 211
+ 2ac:	90 e3       	ldi	r25, 0x30	; 48
+ 2ae:	21 50       	subi	r18, 0x01	; 1
+ 2b0:	80 40       	sbci	r24, 0x00	; 0
+ 2b2:	90 40       	sbci	r25, 0x00	; 0
+ 2b4:	e1 f7       	brne	.-8      	; 0x2ae <main+0x32>
+ 2b6:	00 c0       	rjmp	.+0      	; 0x2b8 <main+0x3c>
+ 2b8:	00 00       	nop
 		_delay_ms(1000);
+		
 		X10TX_obj.transmit(0b10, 0b1001);
- 2b4:	49 e0       	ldi	r20, 0x09	; 9
- 2b6:	62 e0       	ldi	r22, 0x02	; 2
- 2b8:	80 e0       	ldi	r24, 0x00	; 0
- 2ba:	92 e0       	ldi	r25, 0x02	; 2
- 2bc:	66 df       	rcall	.-308    	; 0x18a <_ZN6X10_TX8transmitEcc>
- 2be:	2f ef       	ldi	r18, 0xFF	; 255
- 2c0:	83 ed       	ldi	r24, 0xD3	; 211
- 2c2:	90 e3       	ldi	r25, 0x30	; 48
- 2c4:	21 50       	subi	r18, 0x01	; 1
- 2c6:	80 40       	sbci	r24, 0x00	; 0
- 2c8:	90 40       	sbci	r25, 0x00	; 0
- 2ca:	e1 f7       	brne	.-8      	; 0x2c4 <main+0x48>
- 2cc:	00 c0       	rjmp	.+0      	; 0x2ce <main+0x52>
- 2ce:	00 00       	nop
+ 2ba:	49 e0       	ldi	r20, 0x09	; 9
+ 2bc:	62 e0       	ldi	r22, 0x02	; 2
+ 2be:	80 e0       	ldi	r24, 0x00	; 0
+ 2c0:	92 e0       	ldi	r25, 0x02	; 2
+ 2c2:	63 df       	rcall	.-314    	; 0x18a <_ZN6X10_TX8transmitEcc>
+		PORTB |= (1 << 7);
+ 2c4:	2f 9a       	sbi	0x05, 7	; 5
+ 2c6:	2f ef       	ldi	r18, 0xFF	; 255
+ 2c8:	83 ed       	ldi	r24, 0xD3	; 211
+ 2ca:	90 e3       	ldi	r25, 0x30	; 48
+ 2cc:	21 50       	subi	r18, 0x01	; 1
+ 2ce:	80 40       	sbci	r24, 0x00	; 0
+ 2d0:	90 40       	sbci	r25, 0x00	; 0
+ 2d2:	e1 f7       	brne	.-8      	; 0x2cc <main+0x50>
+ 2d4:	00 c0       	rjmp	.+0      	; 0x2d6 <main+0x5a>
+ 2d6:	00 00       	nop
 		_delay_ms(1000);
+		
 		X10TX_obj.transmit(0b10, 0b1101);
- 2d0:	4d e0       	ldi	r20, 0x0D	; 13
- 2d2:	62 e0       	ldi	r22, 0x02	; 2
- 2d4:	80 e0       	ldi	r24, 0x00	; 0
- 2d6:	92 e0       	ldi	r25, 0x02	; 2
- 2d8:	58 df       	rcall	.-336    	; 0x18a <_ZN6X10_TX8transmitEcc>
- 2da:	2f ef       	ldi	r18, 0xFF	; 255
- 2dc:	83 ed       	ldi	r24, 0xD3	; 211
- 2de:	90 e3       	ldi	r25, 0x30	; 48
- 2e0:	21 50       	subi	r18, 0x01	; 1
- 2e2:	80 40       	sbci	r24, 0x00	; 0
- 2e4:	90 40       	sbci	r25, 0x00	; 0
- 2e6:	e1 f7       	brne	.-8      	; 0x2e0 <main+0x64>
- 2e8:	00 c0       	rjmp	.+0      	; 0x2ea <main+0x6e>
- 2ea:	00 00       	nop
+ 2d8:	4d e0       	ldi	r20, 0x0D	; 13
+ 2da:	62 e0       	ldi	r22, 0x02	; 2
+ 2dc:	80 e0       	ldi	r24, 0x00	; 0
+ 2de:	92 e0       	ldi	r25, 0x02	; 2
+ 2e0:	54 df       	rcall	.-344    	; 0x18a <_ZN6X10_TX8transmitEcc>
+		PORTB &= ~(1 << 7);
+ 2e2:	2f 98       	cbi	0x05, 7	; 5
+ 2e4:	2f ef       	ldi	r18, 0xFF	; 255
+ 2e6:	83 ed       	ldi	r24, 0xD3	; 211
+ 2e8:	90 e3       	ldi	r25, 0x30	; 48
+ 2ea:	21 50       	subi	r18, 0x01	; 1
+ 2ec:	80 40       	sbci	r24, 0x00	; 0
+ 2ee:	90 40       	sbci	r25, 0x00	; 0
+ 2f0:	e1 f7       	brne	.-8      	; 0x2ea <main+0x6e>
+ 2f2:	00 c0       	rjmp	.+0      	; 0x2f4 <main+0x78>
+ 2f4:	00 00       	nop
 		_delay_ms(1000);
+		
 		X10TX_obj.transmit(0b10, 0b1110);
- 2ec:	4e e0       	ldi	r20, 0x0E	; 14
- 2ee:	62 e0       	ldi	r22, 0x02	; 2
- 2f0:	80 e0       	ldi	r24, 0x00	; 0
- 2f2:	92 e0       	ldi	r25, 0x02	; 2
- 2f4:	4a df       	rcall	.-364    	; 0x18a <_ZN6X10_TX8transmitEcc>
- 2f6:	2f ef       	ldi	r18, 0xFF	; 255
- 2f8:	83 ed       	ldi	r24, 0xD3	; 211
- 2fa:	90 e3       	ldi	r25, 0x30	; 48
- 2fc:	21 50       	subi	r18, 0x01	; 1
- 2fe:	80 40       	sbci	r24, 0x00	; 0
- 300:	90 40       	sbci	r25, 0x00	; 0
- 302:	e1 f7       	brne	.-8      	; 0x2fc <main+0x80>
- 304:	00 c0       	rjmp	.+0      	; 0x306 <main+0x8a>
- 306:	00 00       	nop
- 308:	b9 cf       	rjmp	.-142    	; 0x27c <main>
+ 2f6:	4e e0       	ldi	r20, 0x0E	; 14
+ 2f8:	62 e0       	ldi	r22, 0x02	; 2
+ 2fa:	80 e0       	ldi	r24, 0x00	; 0
+ 2fc:	92 e0       	ldi	r25, 0x02	; 2
+ 2fe:	45 df       	rcall	.-374    	; 0x18a <_ZN6X10_TX8transmitEcc>
+ 300:	2f ef       	ldi	r18, 0xFF	; 255
+ 302:	83 ed       	ldi	r24, 0xD3	; 211
+ 304:	90 e3       	ldi	r25, 0x30	; 48
+ 306:	21 50       	subi	r18, 0x01	; 1
+ 308:	80 40       	sbci	r24, 0x00	; 0
+ 30a:	90 40       	sbci	r25, 0x00	; 0
+ 30c:	e1 f7       	brne	.-8      	; 0x306 <main+0x8a>
+ 30e:	00 c0       	rjmp	.+0      	; 0x310 <main+0x94>
+ 310:	00 00       	nop
+ 312:	b5 cf       	rjmp	.-150    	; 0x27e <main+0x2>
 
-0000030a <__vector_1>:
+00000314 <__vector_1>:
 		
 	}
 
 }
 
 ISR(INT0_vect) {
- 30a:	1f 92       	push	r1
- 30c:	0f 92       	push	r0
- 30e:	0f b6       	in	r0, 0x3f	; 63
- 310:	0f 92       	push	r0
- 312:	11 24       	eor	r1, r1
- 314:	0b b6       	in	r0, 0x3b	; 59
+ 314:	1f 92       	push	r1
  316:	0f 92       	push	r0
- 318:	2f 93       	push	r18
- 31a:	3f 93       	push	r19
- 31c:	4f 93       	push	r20
- 31e:	5f 93       	push	r21
- 320:	6f 93       	push	r22
- 322:	7f 93       	push	r23
- 324:	8f 93       	push	r24
- 326:	9f 93       	push	r25
- 328:	af 93       	push	r26
- 32a:	bf 93       	push	r27
- 32c:	ef 93       	push	r30
- 32e:	ff 93       	push	r31
+ 318:	0f b6       	in	r0, 0x3f	; 63
+ 31a:	0f 92       	push	r0
+ 31c:	11 24       	eor	r1, r1
+ 31e:	0b b6       	in	r0, 0x3b	; 59
+ 320:	0f 92       	push	r0
+ 322:	2f 93       	push	r18
+ 324:	3f 93       	push	r19
+ 326:	4f 93       	push	r20
+ 328:	5f 93       	push	r21
+ 32a:	6f 93       	push	r22
+ 32c:	7f 93       	push	r23
+ 32e:	8f 93       	push	r24
+ 330:	9f 93       	push	r25
+ 332:	af 93       	push	r26
+ 334:	bf 93       	push	r27
+ 336:	ef 93       	push	r30
+ 338:	ff 93       	push	r31
 	
 	X10TX_obj.x10_tx_interrupt();
- 330:	80 e0       	ldi	r24, 0x00	; 0
- 332:	92 e0       	ldi	r25, 0x02	; 2
- 334:	6d df       	rcall	.-294    	; 0x210 <_ZN6X10_TX16x10_tx_interruptEv>
- 336:	ff 91       	pop	r31
- 338:	ef 91       	pop	r30
- 33a:	bf 91       	pop	r27
- 33c:	af 91       	pop	r26
- 33e:	9f 91       	pop	r25
- 340:	8f 91       	pop	r24
- 342:	7f 91       	pop	r23
- 344:	6f 91       	pop	r22
- 346:	5f 91       	pop	r21
- 348:	4f 91       	pop	r20
- 34a:	3f 91       	pop	r19
- 34c:	2f 91       	pop	r18
- 34e:	0f 90       	pop	r0
- 350:	0b be       	out	0x3b, r0	; 59
- 352:	0f 90       	pop	r0
- 354:	0f be       	out	0x3f, r0	; 63
- 356:	0f 90       	pop	r0
- 358:	1f 90       	pop	r1
- 35a:	18 95       	reti
+ 33a:	80 e0       	ldi	r24, 0x00	; 0
+ 33c:	92 e0       	ldi	r25, 0x02	; 2
+ 33e:	68 df       	rcall	.-304    	; 0x210 <_ZN6X10_TX16x10_tx_interruptEv>
+ 340:	ff 91       	pop	r31
+ 342:	ef 91       	pop	r30
+ 344:	bf 91       	pop	r27
+ 346:	af 91       	pop	r26
+ 348:	9f 91       	pop	r25
+ 34a:	8f 91       	pop	r24
+ 34c:	7f 91       	pop	r23
+ 34e:	6f 91       	pop	r22
+ 350:	5f 91       	pop	r21
+ 352:	4f 91       	pop	r20
+ 354:	3f 91       	pop	r19
+ 356:	2f 91       	pop	r18
+ 358:	0f 90       	pop	r0
+ 35a:	0b be       	out	0x3b, r0	; 59
+ 35c:	0f 90       	pop	r0
+ 35e:	0f be       	out	0x3f, r0	; 63
+ 360:	0f 90       	pop	r0
+ 362:	1f 90       	pop	r1
+ 364:	18 95       	reti
 
-0000035c <_GLOBAL__sub_I_X10TX_obj>:
+00000366 <_GLOBAL__sub_I_X10TX_obj>:
 #include "X10_TX.h"
 
 #define F_CPU 16000000
 #include <util/delay.h>
 
 X10_TX X10TX_obj;
- 35c:	80 e0       	ldi	r24, 0x00	; 0
- 35e:	92 e0       	ldi	r25, 0x02	; 2
- 360:	e4 ce       	rjmp	.-568    	; 0x12a <_ZN6X10_TXC1Ev>
- 362:	08 95       	ret
+ 366:	80 e0       	ldi	r24, 0x00	; 0
+ 368:	92 e0       	ldi	r25, 0x02	; 2
+ 36a:	df ce       	rjmp	.-578    	; 0x12a <_ZN6X10_TXC1Ev>
+ 36c:	08 95       	ret
 
-00000364 <__tablejump2__>:
- 364:	ee 0f       	add	r30, r30
- 366:	ff 1f       	adc	r31, r31
- 368:	88 1f       	adc	r24, r24
- 36a:	8b bf       	out	0x3b, r24	; 59
- 36c:	07 90       	elpm	r0, Z+
- 36e:	f6 91       	elpm	r31, Z
- 370:	e0 2d       	mov	r30, r0
- 372:	19 94       	eijmp
+0000036e <__tablejump2__>:
+ 36e:	ee 0f       	add	r30, r30
+ 370:	ff 1f       	adc	r31, r31
+ 372:	88 1f       	adc	r24, r24
+ 374:	8b bf       	out	0x3b, r24	; 59
+ 376:	07 90       	elpm	r0, Z+
+ 378:	f6 91       	elpm	r31, Z
+ 37a:	e0 2d       	mov	r30, r0
+ 37c:	19 94       	eijmp
 
-00000374 <_exit>:
- 374:	f8 94       	cli
+0000037e <_exit>:
+ 37e:	f8 94       	cli
 
-00000376 <__stop_program>:
- 376:	ff cf       	rjmp	.-2      	; 0x376 <__stop_program>
+00000380 <__stop_program>:
+ 380:	ff cf       	rjmp	.-2      	; 0x380 <__stop_program>
