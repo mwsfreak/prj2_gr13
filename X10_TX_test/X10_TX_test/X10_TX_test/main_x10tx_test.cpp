@@ -17,18 +17,28 @@ X10_TX X10TX_obj;
 
 int main(void) {
 	
+	DDRB |= 0b10000000;
+	
 	while(1) {
 		X10TX_obj.transmit(0b10, 0b0010);
-	
+		PORTB |= 0b10000000;
 		_delay_ms(1000);
+		
 		X10TX_obj.transmit(0b10, 0b0001);
+		PORTB &= ~(0b10000000);
 		_delay_ms(1000);
+		
 		X10TX_obj.transmit(0b10, 0b1001);
+		PORTB |= 0b10000000;
 		_delay_ms(1000);
+		
 		X10TX_obj.transmit(0b10, 0b1101);
+		PORTB &= ~(0b10000000);
 		_delay_ms(1000);
+		
 		X10TX_obj.transmit(0b10, 0b1110);
 		_delay_ms(1000);
+		
 		
 		
 		
