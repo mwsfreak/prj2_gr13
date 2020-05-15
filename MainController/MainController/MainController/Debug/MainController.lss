@@ -1,0 +1,1131 @@
+
+MainController.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800200  0000056a  000005fe  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000056a  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000013  00800202  00800202  00000600  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000600  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000630  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000118  00000000  00000000  00000670  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001d58  00000000  00000000  00000788  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000012b8  00000000  00000000  000024e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000a23  00000000  00000000  00003798  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000264  00000000  00000000  000041bc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000a05  00000000  00000000  00004420  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000005ed  00000000  00000000  00004e25  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000108  00000000  00000000  00005412  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	72 c0       	rjmp	.+228    	; 0xe6 <__ctors_end>
+   2:	00 00       	nop
+   4:	7b c2       	rjmp	.+1270   	; 0x4fc <__vector_1>
+   6:	00 00       	nop
+   8:	9c c0       	rjmp	.+312    	; 0x142 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	9a c0       	rjmp	.+308    	; 0x142 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	98 c0       	rjmp	.+304    	; 0x142 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	96 c0       	rjmp	.+300    	; 0x142 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	94 c0       	rjmp	.+296    	; 0x142 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	92 c0       	rjmp	.+292    	; 0x142 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	90 c0       	rjmp	.+288    	; 0x142 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	8e c0       	rjmp	.+284    	; 0x142 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	8c c0       	rjmp	.+280    	; 0x142 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	8a c0       	rjmp	.+276    	; 0x142 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	88 c0       	rjmp	.+272    	; 0x142 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	86 c0       	rjmp	.+268    	; 0x142 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	84 c0       	rjmp	.+264    	; 0x142 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	82 c0       	rjmp	.+260    	; 0x142 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	80 c0       	rjmp	.+256    	; 0x142 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	7e c0       	rjmp	.+252    	; 0x142 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	7c c0       	rjmp	.+248    	; 0x142 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	7a c0       	rjmp	.+244    	; 0x142 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	78 c0       	rjmp	.+240    	; 0x142 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	76 c0       	rjmp	.+236    	; 0x142 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	74 c0       	rjmp	.+232    	; 0x142 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	72 c0       	rjmp	.+228    	; 0x142 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	70 c0       	rjmp	.+224    	; 0x142 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	3a c2       	rjmp	.+1140   	; 0x4da <__vector_25>
+  66:	00 00       	nop
+  68:	6c c0       	rjmp	.+216    	; 0x142 <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	6a c0       	rjmp	.+212    	; 0x142 <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	68 c0       	rjmp	.+208    	; 0x142 <__bad_interrupt>
+  72:	00 00       	nop
+  74:	66 c0       	rjmp	.+204    	; 0x142 <__bad_interrupt>
+  76:	00 00       	nop
+  78:	64 c0       	rjmp	.+200    	; 0x142 <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	62 c0       	rjmp	.+196    	; 0x142 <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	60 c0       	rjmp	.+192    	; 0x142 <__bad_interrupt>
+  82:	00 00       	nop
+  84:	5e c0       	rjmp	.+188    	; 0x142 <__bad_interrupt>
+  86:	00 00       	nop
+  88:	5c c0       	rjmp	.+184    	; 0x142 <__bad_interrupt>
+  8a:	00 00       	nop
+  8c:	5a c0       	rjmp	.+180    	; 0x142 <__bad_interrupt>
+  8e:	00 00       	nop
+  90:	13 c2       	rjmp	.+1062   	; 0x4b8 <__vector_36>
+  92:	00 00       	nop
+  94:	56 c0       	rjmp	.+172    	; 0x142 <__bad_interrupt>
+  96:	00 00       	nop
+  98:	54 c0       	rjmp	.+168    	; 0x142 <__bad_interrupt>
+  9a:	00 00       	nop
+  9c:	52 c0       	rjmp	.+164    	; 0x142 <__bad_interrupt>
+  9e:	00 00       	nop
+  a0:	50 c0       	rjmp	.+160    	; 0x142 <__bad_interrupt>
+  a2:	00 00       	nop
+  a4:	4e c0       	rjmp	.+156    	; 0x142 <__bad_interrupt>
+  a6:	00 00       	nop
+  a8:	4c c0       	rjmp	.+152    	; 0x142 <__bad_interrupt>
+  aa:	00 00       	nop
+  ac:	4a c0       	rjmp	.+148    	; 0x142 <__bad_interrupt>
+  ae:	00 00       	nop
+  b0:	48 c0       	rjmp	.+144    	; 0x142 <__bad_interrupt>
+  b2:	00 00       	nop
+  b4:	46 c0       	rjmp	.+140    	; 0x142 <__bad_interrupt>
+  b6:	00 00       	nop
+  b8:	44 c0       	rjmp	.+136    	; 0x142 <__bad_interrupt>
+  ba:	00 00       	nop
+  bc:	42 c0       	rjmp	.+132    	; 0x142 <__bad_interrupt>
+  be:	00 00       	nop
+  c0:	40 c0       	rjmp	.+128    	; 0x142 <__bad_interrupt>
+  c2:	00 00       	nop
+  c4:	3e c0       	rjmp	.+124    	; 0x142 <__bad_interrupt>
+  c6:	00 00       	nop
+  c8:	3c c0       	rjmp	.+120    	; 0x142 <__bad_interrupt>
+  ca:	00 00       	nop
+  cc:	3a c0       	rjmp	.+116    	; 0x142 <__bad_interrupt>
+  ce:	00 00       	nop
+  d0:	38 c0       	rjmp	.+112    	; 0x142 <__bad_interrupt>
+  d2:	00 00       	nop
+  d4:	36 c0       	rjmp	.+108    	; 0x142 <__bad_interrupt>
+  d6:	00 00       	nop
+  d8:	34 c0       	rjmp	.+104    	; 0x142 <__bad_interrupt>
+  da:	00 00       	nop
+  dc:	32 c0       	rjmp	.+100    	; 0x142 <__bad_interrupt>
+  de:	00 00       	nop
+  e0:	30 c0       	rjmp	.+96     	; 0x142 <__bad_interrupt>
+	...
+
+000000e4 <__ctors_start>:
+  e4:	a7 02       	muls	r26, r23
+
+000000e6 <__ctors_end>:
+  e6:	11 24       	eor	r1, r1
+  e8:	1f be       	out	0x3f, r1	; 63
+  ea:	cf ef       	ldi	r28, 0xFF	; 255
+  ec:	d1 e2       	ldi	r29, 0x21	; 33
+  ee:	de bf       	out	0x3e, r29	; 62
+  f0:	cd bf       	out	0x3d, r28	; 61
+  f2:	00 e0       	ldi	r16, 0x00	; 0
+  f4:	0c bf       	out	0x3c, r16	; 60
+
+000000f6 <__do_copy_data>:
+  f6:	12 e0       	ldi	r17, 0x02	; 2
+  f8:	a0 e0       	ldi	r26, 0x00	; 0
+  fa:	b2 e0       	ldi	r27, 0x02	; 2
+  fc:	ea e6       	ldi	r30, 0x6A	; 106
+  fe:	f5 e0       	ldi	r31, 0x05	; 5
+ 100:	00 e0       	ldi	r16, 0x00	; 0
+ 102:	0b bf       	out	0x3b, r16	; 59
+ 104:	02 c0       	rjmp	.+4      	; 0x10a <__do_copy_data+0x14>
+ 106:	07 90       	elpm	r0, Z+
+ 108:	0d 92       	st	X+, r0
+ 10a:	a2 30       	cpi	r26, 0x02	; 2
+ 10c:	b1 07       	cpc	r27, r17
+ 10e:	d9 f7       	brne	.-10     	; 0x106 <__do_copy_data+0x10>
+
+00000110 <__do_clear_bss>:
+ 110:	22 e0       	ldi	r18, 0x02	; 2
+ 112:	a2 e0       	ldi	r26, 0x02	; 2
+ 114:	b2 e0       	ldi	r27, 0x02	; 2
+ 116:	01 c0       	rjmp	.+2      	; 0x11a <.do_clear_bss_start>
+
+00000118 <.do_clear_bss_loop>:
+ 118:	1d 92       	st	X+, r1
+
+0000011a <.do_clear_bss_start>:
+ 11a:	a5 31       	cpi	r26, 0x15	; 21
+ 11c:	b2 07       	cpc	r27, r18
+ 11e:	e1 f7       	brne	.-8      	; 0x118 <.do_clear_bss_loop>
+
+00000120 <__do_global_ctors>:
+ 120:	10 e0       	ldi	r17, 0x00	; 0
+ 122:	c3 e7       	ldi	r28, 0x73	; 115
+ 124:	d0 e0       	ldi	r29, 0x00	; 0
+ 126:	00 e0       	ldi	r16, 0x00	; 0
+ 128:	05 c0       	rjmp	.+10     	; 0x134 <__do_global_ctors+0x14>
+ 12a:	21 97       	sbiw	r28, 0x01	; 1
+ 12c:	01 09       	sbc	r16, r1
+ 12e:	80 2f       	mov	r24, r16
+ 130:	fe 01       	movw	r30, r28
+ 132:	11 d2       	rcall	.+1058   	; 0x556 <__tablejump2__>
+ 134:	c2 37       	cpi	r28, 0x72	; 114
+ 136:	d1 07       	cpc	r29, r17
+ 138:	80 e0       	ldi	r24, 0x00	; 0
+ 13a:	08 07       	cpc	r16, r24
+ 13c:	b1 f7       	brne	.-20     	; 0x12a <__do_global_ctors+0xa>
+ 13e:	59 d1       	rcall	.+690    	; 0x3f2 <main>
+ 140:	12 c2       	rjmp	.+1060   	; 0x566 <_exit>
+
+00000142 <__bad_interrupt>:
+ 142:	5e cf       	rjmp	.-324    	; 0x0 <__vectors>
+
+00000144 <_ZN3DE2C1Ev>:
+	return DE2state_;
+}
+
+void DE2::setDE2state(char state)
+{
+	DE2state_ = state;
+ 144:	fc 01       	movw	r30, r24
+ 146:	88 e9       	ldi	r24, 0x98	; 152
+ 148:	80 93 c9 00 	sts	0x00C9, r24	; 0x8000c9 <__TEXT_REGION_LENGTH__+0x7000c9>
+ 14c:	86 e0       	ldi	r24, 0x06	; 6
+ 14e:	80 93 ca 00 	sts	0x00CA, r24	; 0x8000ca <__TEXT_REGION_LENGTH__+0x7000ca>
+ 152:	87 e6       	ldi	r24, 0x67	; 103
+ 154:	90 e0       	ldi	r25, 0x00	; 0
+ 156:	90 93 cd 00 	sts	0x00CD, r25	; 0x8000cd <__TEXT_REGION_LENGTH__+0x7000cd>
+ 15a:	80 93 cc 00 	sts	0x00CC, r24	; 0x8000cc <__TEXT_REGION_LENGTH__+0x7000cc>
+ 15e:	8f ef       	ldi	r24, 0xFF	; 255
+ 160:	84 b9       	out	0x04, r24	; 4
+ 162:	15 b8       	out	0x05, r1	; 5
+ 164:	81 e0       	ldi	r24, 0x01	; 1
+ 166:	82 83       	std	Z+2, r24	; 0x02
+ 168:	80 e8       	ldi	r24, 0x80	; 128
+ 16a:	83 83       	std	Z+3, r24	; 0x03
+ 16c:	8a ea       	ldi	r24, 0xAA	; 170
+ 16e:	84 83       	std	Z+4, r24	; 0x04
+ 170:	85 e5       	ldi	r24, 0x55	; 85
+ 172:	81 83       	std	Z+1, r24	; 0x01
+ 174:	08 95       	ret
+
+00000176 <_ZNK3DE211getPasswordEv>:
+}
+
+char DE2::getPassword() const
+{
+	return password_;
+}
+ 176:	fc 01       	movw	r30, r24
+ 178:	81 81       	ldd	r24, Z+1	; 0x01
+ 17a:	08 95       	ret
+
+0000017c <_ZN3DE211setPasswordEc>:
+
+void DE2::setPassword(char pasword)
+{
+	password_ = pasword;
+ 17c:	fc 01       	movw	r30, r24
+ 17e:	61 83       	std	Z+1, r22	; 0x01
+ 180:	08 95       	ret
+
+00000182 <_ZN3DE213checkPasswordEc>:
+}
+
+void DE2::checkPassword(char input)
+{										// If password passed to DE2 is correct
+ 182:	dc 01       	movw	r26, r24
+	if (input == password_)
+ 184:	11 96       	adiw	r26, 0x01	; 1
+ 186:	8c 91       	ld	r24, X
+ 188:	11 97       	sbiw	r26, 0x01	; 1
+ 18a:	86 13       	cpse	r24, r22
+ 18c:	18 c0       	rjmp	.+48     	; 0x1be <_ZN3DE213checkPasswordEc+0x3c>
+	{
+		while ( (UCSR1A & (1<<5)) == 0 )		// Check for a clear register
+ 18e:	e8 ec       	ldi	r30, 0xC8	; 200
+ 190:	f0 e0       	ldi	r31, 0x00	; 0
+ 192:	90 81       	ld	r25, Z
+ 194:	95 ff       	sbrs	r25, 5
+ 196:	fd cf       	rjmp	.-6      	; 0x192 <_ZN3DE213checkPasswordEc+0x10>
+		{}
+		if (DE2state_ == 'D')					// if current state is Deactivated
+ 198:	8c 91       	ld	r24, X
+ 19a:	84 34       	cpi	r24, 0x44	; 68
+ 19c:	41 f4       	brne	.+16     	; 0x1ae <_ZN3DE213checkPasswordEc+0x2c>
+		{
+			UDR1 = activated_;					// send "activated" as feedback to DE2
+ 19e:	12 96       	adiw	r26, 0x02	; 2
+ 1a0:	8c 91       	ld	r24, X
+ 1a2:	12 97       	sbiw	r26, 0x02	; 2
+ 1a4:	80 93 ce 00 	sts	0x00CE, r24	; 0x8000ce <__TEXT_REGION_LENGTH__+0x7000ce>
+	return DE2state_;
+}
+
+void DE2::setDE2state(char state)
+{
+	DE2state_ = state;
+ 1a8:	81 e4       	ldi	r24, 0x41	; 65
+ 1aa:	8c 93       	st	X, r24
+ 1ac:	08 95       	ret
+			UDR1 = activated_;					// send "activated" as feedback to DE2
+			setDE2state('A');					// set state
+		}
+		else									// if current state is Activated
+		{
+			UDR1 = deactivated_;				// send "deactivated" as feedback to DE2
+ 1ae:	13 96       	adiw	r26, 0x03	; 3
+ 1b0:	8c 91       	ld	r24, X
+ 1b2:	13 97       	sbiw	r26, 0x03	; 3
+ 1b4:	80 93 ce 00 	sts	0x00CE, r24	; 0x8000ce <__TEXT_REGION_LENGTH__+0x7000ce>
+	return DE2state_;
+}
+
+void DE2::setDE2state(char state)
+{
+	DE2state_ = state;
+ 1b8:	84 e4       	ldi	r24, 0x44	; 68
+ 1ba:	8c 93       	st	X, r24
+ 1bc:	08 95       	ret
+			setDE2state('D');					// set state
+		}
+	}
+	else								// If password passed to DE2 is incorrect
+	{
+		while ( (UCSR1A & (1<<5)) == 0 )		// Check for a clear register
+ 1be:	e8 ec       	ldi	r30, 0xC8	; 200
+ 1c0:	f0 e0       	ldi	r31, 0x00	; 0
+ 1c2:	90 81       	ld	r25, Z
+ 1c4:	95 ff       	sbrs	r25, 5
+ 1c6:	fd cf       	rjmp	.-6      	; 0x1c2 <_ZN3DE213checkPasswordEc+0x40>
+		{}
+		UDR1 = error_;							// 0b10101010 == Error
+ 1c8:	14 96       	adiw	r26, 0x04	; 4
+ 1ca:	8c 91       	ld	r24, X
+ 1cc:	14 97       	sbiw	r26, 0x04	; 4
+ 1ce:	80 93 ce 00 	sts	0x00CE, r24	; 0x8000ce <__TEXT_REGION_LENGTH__+0x7000ce>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1d2:	2f ef       	ldi	r18, 0xFF	; 255
+ 1d4:	8b e7       	ldi	r24, 0x7B	; 123
+ 1d6:	92 e9       	ldi	r25, 0x92	; 146
+ 1d8:	21 50       	subi	r18, 0x01	; 1
+ 1da:	80 40       	sbci	r24, 0x00	; 0
+ 1dc:	90 40       	sbci	r25, 0x00	; 0
+ 1de:	e1 f7       	brne	.-8      	; 0x1d8 <_ZN3DE213checkPasswordEc+0x56>
+ 1e0:	00 c0       	rjmp	.+0      	; 0x1e2 <_ZN3DE213checkPasswordEc+0x60>
+ 1e2:	00 00       	nop
+		_delay_ms(3000);						// Error display time
+				
+		while ( (UCSR1A & (1<<5)) == 0 )		// Check for a clear register
+ 1e4:	e8 ec       	ldi	r30, 0xC8	; 200
+ 1e6:	f0 e0       	ldi	r31, 0x00	; 0
+ 1e8:	90 81       	ld	r25, Z
+ 1ea:	95 ff       	sbrs	r25, 5
+ 1ec:	fd cf       	rjmp	.-6      	; 0x1e8 <_ZN3DE213checkPasswordEc+0x66>
+		{}
+		if (DE2state_ == 'D')					// current state is Deactivated
+ 1ee:	8c 91       	ld	r24, X
+ 1f0:	84 34       	cpi	r24, 0x44	; 68
+ 1f2:	29 f4       	brne	.+10     	; 0x1fe <_ZN3DE213checkPasswordEc+0x7c>
+		{
+			UDR1 = deactivated_;				//  Update DE2 display
+ 1f4:	13 96       	adiw	r26, 0x03	; 3
+ 1f6:	8c 91       	ld	r24, X
+ 1f8:	80 93 ce 00 	sts	0x00CE, r24	; 0x8000ce <__TEXT_REGION_LENGTH__+0x7000ce>
+ 1fc:	08 95       	ret
+		}
+		else									// current state is Activated
+		{
+			UDR1 = activated_;					//  Update DE2 display
+ 1fe:	12 96       	adiw	r26, 0x02	; 2
+ 200:	8c 91       	ld	r24, X
+ 202:	80 93 ce 00 	sts	0x00CE, r24	; 0x8000ce <__TEXT_REGION_LENGTH__+0x7000ce>
+ 206:	08 95       	ret
+
+00000208 <_ZN2PCC1Ev>:
+#include <avr/interrupt.h>
+#include <util/delay.h>
+#include "PC.h"
+
+// default constructor
+PC::PC()
+ 208:	fc 01       	movw	r30, r24
+{
+    UCSR0B = 0b10011000;			// enable Tx and Rx, , interrupt enabled
+ 20a:	88 e9       	ldi	r24, 0x98	; 152
+ 20c:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7000c1>
+    UCSR0C = 0b00000110;			// 8 bit, no parity, asynchronous, 1 stop bit
+ 210:	86 e0       	ldi	r24, 0x06	; 6
+ 212:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7000c2>
+    UBRR0 = 103;					// Baudrate 9600 bit/s	
+ 216:	87 e6       	ldi	r24, 0x67	; 103
+ 218:	90 e0       	ldi	r25, 0x00	; 0
+ 21a:	90 93 c5 00 	sts	0x00C5, r25	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7000c5>
+ 21e:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7000c4>
+	
+	// --- LED test
+	DDRB = 0xFF; // PortB output
+ 222:	8f ef       	ldi	r24, 0xFF	; 255
+ 224:	84 b9       	out	0x04, r24	; 4
+	PORTB = 0;   // LEDs off
+ 226:	15 b8       	out	0x05, r1	; 5
+	// --- LED test
+	
+	// command settings
+	UnitTest_ = 50;
+ 228:	92 e3       	ldi	r25, 0x32	; 50
+ 22a:	91 83       	std	Z+1, r25	; 0x01
+	changePassword_ = 150;
+ 22c:	96 e9       	ldi	r25, 0x96	; 150
+ 22e:	90 83       	st	Z, r25
+	exit_ = 255;
+ 230:	82 83       	std	Z+2, r24	; 0x02
+ 232:	08 95       	ret
+
+00000234 <_ZN2PC11recieveDataEv>:
+	}
+}
+
+char PC::recieveData()
+{
+		while ( (UCSR0A & (1<<7)) == 0 )	// wait for data
+ 234:	e0 ec       	ldi	r30, 0xC0	; 192
+ 236:	f0 e0       	ldi	r31, 0x00	; 0
+ 238:	80 81       	ld	r24, Z
+ 23a:	88 23       	and	r24, r24
+ 23c:	ec f7       	brge	.-6      	; 0x238 <_ZN2PC11recieveDataEv+0x4>
+		{}
+		char rxData = UDR0;
+ 23e:	80 91 c6 00 	lds	r24, 0x00C6	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7000c6>
+		return rxData;						// return recieved Data
+}
+ 242:	08 95       	ret
+
+00000244 <_ZN2PC8unitTestERcS0_>:
+	changePassword_ = 150;
+	exit_ = 255;
+} 
+
+void PC::unitTest(char &adress,char &command)
+{
+ 244:	ef 92       	push	r14
+ 246:	ff 92       	push	r15
+ 248:	0f 93       	push	r16
+ 24a:	1f 93       	push	r17
+ 24c:	cf 93       	push	r28
+ 24e:	df 93       	push	r29
+ 250:	ec 01       	movw	r28, r24
+ 252:	7b 01       	movw	r14, r22
+ 254:	8a 01       	movw	r16, r20
+		
+	
+	adress = recieveData();					// set address on Unit
+ 256:	ee df       	rcall	.-36     	; 0x234 <_ZN2PC11recieveDataEv>
+ 258:	f7 01       	movw	r30, r14
+ 25a:	80 83       	st	Z, r24
+	command = recieveData();			// set desired command
+ 25c:	ce 01       	movw	r24, r28
+ 25e:	ea df       	rcall	.-44     	; 0x234 <_ZN2PC11recieveDataEv>
+ 260:	f8 01       	movw	r30, r16
+ 262:	80 83       	st	Z, r24
+}
+ 264:	df 91       	pop	r29
+ 266:	cf 91       	pop	r28
+ 268:	1f 91       	pop	r17
+ 26a:	0f 91       	pop	r16
+ 26c:	ff 90       	pop	r15
+ 26e:	ef 90       	pop	r14
+ 270:	08 95       	ret
+
+00000272 <_ZN2PC14changePasswordEv>:
+char PC::changePassword()
+{
+	int runLoop = 1;
+	while (runLoop)						// Change password loop	
+	{
+		char PCchoice = recieveData();		// Receive PC option
+ 272:	e0 cf       	rjmp	.-64     	; 0x234 <_ZN2PC11recieveDataEv>
+		{									//
+			runLoop = 0;					// Idle state
+		}
+		return PCchoice;
+	}
+}
+ 274:	08 95       	ret
+
+00000276 <_ZNK2PC12sendFeedbackEc>:
+		return rxData;						// return recieved Data
+}
+
+void PC::sendFeedback(char feedback) const
+{
+	while ( (UCSR0A & (1<<5)) == 0 )	// Wait for clear register
+ 276:	e0 ec       	ldi	r30, 0xC0	; 192
+ 278:	f0 e0       	ldi	r31, 0x00	; 0
+ 27a:	80 81       	ld	r24, Z
+ 27c:	85 ff       	sbrs	r24, 5
+ 27e:	fd cf       	rjmp	.-6      	; 0x27a <_ZNK2PC12sendFeedbackEc+0x4>
+	{ }
+	UDR0 = feedback;					// send feedback to PC
+ 280:	60 93 c6 00 	sts	0x00C6, r22	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7000c6>
+ 284:	08 95       	ret
+
+00000286 <_ZNK2PC15passwordRequestEc>:
+}
+
+bool PC::passwordRequest(char command) const
+{
+ 286:	fc 01       	movw	r30, r24
+	return (changePassword_ == command);
+ 288:	81 e0       	ldi	r24, 0x01	; 1
+ 28a:	90 81       	ld	r25, Z
+ 28c:	96 13       	cpse	r25, r22
+ 28e:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 290:	08 95       	ret
+
+00000292 <_ZNK2PC15UnitTestRequestEc>:
+
+bool PC::UnitTestRequest(char command) const
+{
+	return (UnitTest_ == command);
+ 292:	21 e0       	ldi	r18, 0x01	; 1
+ 294:	fc 01       	movw	r30, r24
+ 296:	81 81       	ldd	r24, Z+1	; 0x01
+ 298:	86 13       	cpse	r24, r22
+ 29a:	20 e0       	ldi	r18, 0x00	; 0
+}
+ 29c:	82 2f       	mov	r24, r18
+ 29e:	08 95       	ret
+
+000002a0 <_ZN6X10_TXC1Ev>:
+
+#define F_CPU 16000000
+#include <util/delay.h>
+
+// default constructor
+X10_TX::X10_TX() {
+ 2a0:	dc 01       	movw	r26, r24
+	burstIndex_ = 0;
+ 2a2:	51 96       	adiw	r26, 0x11	; 17
+ 2a4:	1c 92       	st	X, r1
+ 2a6:	1e 92       	st	-X, r1
+ 2a8:	50 97       	sbiw	r26, 0x10	; 16
+	dataReady_ = 0;
+ 2aa:	52 96       	adiw	r26, 0x12	; 18
+ 2ac:	1c 92       	st	X, r1
+ 2ae:	52 97       	sbiw	r26, 0x12	; 18
+	
+	burstTrain_[0] = 1;
+ 2b0:	81 e0       	ldi	r24, 0x01	; 1
+ 2b2:	8c 93       	st	X, r24
+	burstTrain_[1] = 1;
+ 2b4:	11 96       	adiw	r26, 0x01	; 1
+ 2b6:	8c 93       	st	X, r24
+ 2b8:	11 97       	sbiw	r26, 0x01	; 1
+	burstTrain_[2] = 1;
+ 2ba:	12 96       	adiw	r26, 0x02	; 2
+ 2bc:	8c 93       	st	X, r24
+ 2be:	12 97       	sbiw	r26, 0x02	; 2
+	burstTrain_[3] = 0;
+ 2c0:	13 96       	adiw	r26, 0x03	; 3
+ 2c2:	1c 92       	st	X, r1
+ 2c4:	13 97       	sbiw	r26, 0x03	; 3
+ 2c6:	fd 01       	movw	r30, r26
+ 2c8:	34 96       	adiw	r30, 0x04	; 4
+ 2ca:	cd 01       	movw	r24, r26
+ 2cc:	40 96       	adiw	r24, 0x10	; 16
+
+	for (int i = 4; i <= 15; i++) {
+		burstTrain_[i] = 0;
+ 2ce:	11 92       	st	Z+, r1
+	burstTrain_[0] = 1;
+	burstTrain_[1] = 1;
+	burstTrain_[2] = 1;
+	burstTrain_[3] = 0;
+
+	for (int i = 4; i <= 15; i++) {
+ 2d0:	e8 17       	cp	r30, r24
+ 2d2:	f9 07       	cpc	r31, r25
+ 2d4:	e1 f7       	brne	.-8      	; 0x2ce <_ZN6X10_TXC1Ev+0x2e>
+		burstTrain_[i] = 0;
+	}
+	
+	EICRA = 0b00000001;
+ 2d6:	81 e0       	ldi	r24, 0x01	; 1
+ 2d8:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <__TEXT_REGION_LENGTH__+0x700069>
+	EIMSK = 0b00000001;
+ 2dc:	8d bb       	out	0x1d, r24	; 29
+	sei();
+ 2de:	78 94       	sei
+	
+	// PB outputs and all LEDs off
+	DDRB = 0xFF;
+ 2e0:	8f ef       	ldi	r24, 0xFF	; 255
+ 2e2:	84 b9       	out	0x04, r24	; 4
+	PORTB = 0;
+ 2e4:	15 b8       	out	0x05, r1	; 5
+	
+	// Toggle OC1A on compare match
+	// Mode = 4 (CTC)
+	// Clock prescaler = 1
+	TCCR1A = 0b01000000;
+ 2e6:	80 e4       	ldi	r24, 0x40	; 64
+ 2e8:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+	TCCR1B = 0b00001000;
+ 2ec:	88 e0       	ldi	r24, 0x08	; 8
+ 2ee:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x700081>
+	
+	// Frekvens = 0,5 Hz
+	// 120000 = 16000000/(2*1*(1+OCR1A))
+	OCR1A =66;
+ 2f2:	82 e4       	ldi	r24, 0x42	; 66
+ 2f4:	90 e0       	ldi	r25, 0x00	; 0
+ 2f6:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x700089>
+ 2fa:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x700088>
+ 2fe:	08 95       	ret
+
+00000300 <_ZN6X10_TX8transmitEcc>:
+}
+
+bool X10_TX::transmit(char address, char command) {
+ 300:	fc 01       	movw	r30, r24
+	
+	
+	
+	if ((command == 0) || (command > 15) || (address > 3)) {
+ 302:	8f ef       	ldi	r24, 0xFF	; 255
+ 304:	84 0f       	add	r24, r20
+ 306:	8f 30       	cpi	r24, 0x0F	; 15
+ 308:	10 f4       	brcc	.+4      	; 0x30e <_ZN6X10_TX8transmitEcc+0xe>
+ 30a:	64 30       	cpi	r22, 0x04	; 4
+ 30c:	18 f0       	brcs	.+6      	; 0x314 <_ZN6X10_TX8transmitEcc+0x14>
+		dataReady_ = 0;
+ 30e:	12 8a       	std	Z+18, r1	; 0x12
+		return false;
+ 310:	80 e0       	ldi	r24, 0x00	; 0
+ 312:	08 95       	ret
+	} else {	
+		if ((address & 0b10) > 0) {
+ 314:	61 ff       	sbrs	r22, 1
+ 316:	04 c0       	rjmp	.+8      	; 0x320 <_ZN6X10_TX8transmitEcc+0x20>
+			burstTrain_[4] = 1;
+ 318:	81 e0       	ldi	r24, 0x01	; 1
+ 31a:	84 83       	std	Z+4, r24	; 0x04
+			burstTrain_[5] = 0;
+ 31c:	15 82       	std	Z+5, r1	; 0x05
+ 31e:	03 c0       	rjmp	.+6      	; 0x326 <_ZN6X10_TX8transmitEcc+0x26>
+		} else {
+			burstTrain_[4] = 0;
+ 320:	14 82       	std	Z+4, r1	; 0x04
+			burstTrain_[5] = 1;
+ 322:	81 e0       	ldi	r24, 0x01	; 1
+ 324:	85 83       	std	Z+5, r24	; 0x05
+		}
+		
+		if ((address & 0b01) > 0) {
+ 326:	60 ff       	sbrs	r22, 0
+ 328:	04 c0       	rjmp	.+8      	; 0x332 <_ZN6X10_TX8transmitEcc+0x32>
+			burstTrain_[6] = 1;
+ 32a:	81 e0       	ldi	r24, 0x01	; 1
+ 32c:	86 83       	std	Z+6, r24	; 0x06
+			burstTrain_[7] = 0;
+ 32e:	17 82       	std	Z+7, r1	; 0x07
+ 330:	03 c0       	rjmp	.+6      	; 0x338 <_ZN6X10_TX8transmitEcc+0x38>
+		} else {
+			burstTrain_[6] = 0;
+ 332:	16 82       	std	Z+6, r1	; 0x06
+			burstTrain_[7] = 1;
+ 334:	81 e0       	ldi	r24, 0x01	; 1
+ 336:	87 83       	std	Z+7, r24	; 0x07
+		}
+		
+		if ((command & 0b1000) > 0) {
+ 338:	43 ff       	sbrs	r20, 3
+ 33a:	04 c0       	rjmp	.+8      	; 0x344 <_ZN6X10_TX8transmitEcc+0x44>
+			burstTrain_[8] = 1;
+ 33c:	81 e0       	ldi	r24, 0x01	; 1
+ 33e:	80 87       	std	Z+8, r24	; 0x08
+			burstTrain_[9] = 0;
+ 340:	11 86       	std	Z+9, r1	; 0x09
+ 342:	03 c0       	rjmp	.+6      	; 0x34a <_ZN6X10_TX8transmitEcc+0x4a>
+		} else {
+			burstTrain_[8] = 0;
+ 344:	10 86       	std	Z+8, r1	; 0x08
+			burstTrain_[9] = 1;
+ 346:	81 e0       	ldi	r24, 0x01	; 1
+ 348:	81 87       	std	Z+9, r24	; 0x09
+		}
+		
+		if ((command & 0b0100) > 0) {
+ 34a:	42 ff       	sbrs	r20, 2
+ 34c:	04 c0       	rjmp	.+8      	; 0x356 <_ZN6X10_TX8transmitEcc+0x56>
+			burstTrain_[10] = 1;
+ 34e:	81 e0       	ldi	r24, 0x01	; 1
+ 350:	82 87       	std	Z+10, r24	; 0x0a
+			burstTrain_[11] = 0;
+ 352:	13 86       	std	Z+11, r1	; 0x0b
+ 354:	03 c0       	rjmp	.+6      	; 0x35c <_ZN6X10_TX8transmitEcc+0x5c>
+		} else {
+			burstTrain_[10] = 0;
+ 356:	12 86       	std	Z+10, r1	; 0x0a
+			burstTrain_[11] = 1;
+ 358:	81 e0       	ldi	r24, 0x01	; 1
+ 35a:	83 87       	std	Z+11, r24	; 0x0b
+		}
+		
+		if ((command & 0b0010) > 0) {
+ 35c:	41 ff       	sbrs	r20, 1
+ 35e:	04 c0       	rjmp	.+8      	; 0x368 <_ZN6X10_TX8transmitEcc+0x68>
+			burstTrain_[12] = 1;
+ 360:	81 e0       	ldi	r24, 0x01	; 1
+ 362:	84 87       	std	Z+12, r24	; 0x0c
+			burstTrain_[13] = 0;
+ 364:	15 86       	std	Z+13, r1	; 0x0d
+ 366:	03 c0       	rjmp	.+6      	; 0x36e <_ZN6X10_TX8transmitEcc+0x6e>
+		} else {
+			burstTrain_[12] = 0;
+ 368:	14 86       	std	Z+12, r1	; 0x0c
+			burstTrain_[13] = 1;
+ 36a:	81 e0       	ldi	r24, 0x01	; 1
+ 36c:	85 87       	std	Z+13, r24	; 0x0d
+		}
+		
+		if ((command & 0b0001) > 0) {
+ 36e:	40 ff       	sbrs	r20, 0
+ 370:	04 c0       	rjmp	.+8      	; 0x37a <_ZN6X10_TX8transmitEcc+0x7a>
+			burstTrain_[14] = 1;
+ 372:	81 e0       	ldi	r24, 0x01	; 1
+ 374:	86 87       	std	Z+14, r24	; 0x0e
+			burstTrain_[15] = 0;
+ 376:	17 86       	std	Z+15, r1	; 0x0f
+ 378:	03 c0       	rjmp	.+6      	; 0x380 <_ZN6X10_TX8transmitEcc+0x80>
+		} else {
+			burstTrain_[14] = 0;
+ 37a:	16 86       	std	Z+14, r1	; 0x0e
+			burstTrain_[15] = 1;
+ 37c:	81 e0       	ldi	r24, 0x01	; 1
+ 37e:	87 87       	std	Z+15, r24	; 0x0f
+		}
+		
+		dataReady_ = 1;
+ 380:	81 e0       	ldi	r24, 0x01	; 1
+ 382:	82 8b       	std	Z+18, r24	; 0x12
+		return true;
+	}
+	
+}
+ 384:	08 95       	ret
+
+00000386 <_ZN6X10_TX16x10_tx_interruptEv>:
+	
+	
+void X10_TX::x10_tx_interrupt() {		//Interruptrutine for Zerocrossing - Tjek syntaks!
+ 386:	cf 93       	push	r28
+ 388:	df 93       	push	r29
+ 38a:	fc 01       	movw	r30, r24
+	
+	EIMSK = 0b00000000;		//Disable interrupt
+ 38c:	1d ba       	out	0x1d, r1	; 29
+							//nulstil evt watchdog timer for interrupt
+	if (dataReady_) {
+ 38e:	82 89       	ldd	r24, Z+18	; 0x12
+ 390:	88 23       	and	r24, r24
+ 392:	49 f1       	breq	.+82     	; 0x3e6 <_ZN6X10_TX16x10_tx_interruptEv+0x60>
+		if (burstTrain_[burstIndex_]) {
+ 394:	a0 89       	ldd	r26, Z+16	; 0x10
+ 396:	b1 89       	ldd	r27, Z+17	; 0x11
+ 398:	ae 0f       	add	r26, r30
+ 39a:	bf 1f       	adc	r27, r31
+ 39c:	8c 91       	ld	r24, X
+ 39e:	88 23       	and	r24, r24
+ 3a0:	b1 f0       	breq	.+44     	; 0x3ce <_ZN6X10_TX16x10_tx_interruptEv+0x48>
+
+			TCCR1A |= 0b01000000;		//aktiver timer output
+ 3a2:	c0 e8       	ldi	r28, 0x80	; 128
+ 3a4:	d0 e0       	ldi	r29, 0x00	; 0
+ 3a6:	88 81       	ld	r24, Y
+ 3a8:	80 64       	ori	r24, 0x40	; 64
+ 3aa:	88 83       	st	Y, r24
+			TCCR1B |= 0b00001001;		//aktiver timer clock
+ 3ac:	a1 e8       	ldi	r26, 0x81	; 129
+ 3ae:	b0 e0       	ldi	r27, 0x00	; 0
+ 3b0:	8c 91       	ld	r24, X
+ 3b2:	89 60       	ori	r24, 0x09	; 9
+ 3b4:	8c 93       	st	X, r24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 3b6:	8f e9       	ldi	r24, 0x9F	; 159
+ 3b8:	9f e0       	ldi	r25, 0x0F	; 15
+ 3ba:	01 97       	sbiw	r24, 0x01	; 1
+ 3bc:	f1 f7       	brne	.-4      	; 0x3ba <_ZN6X10_TX16x10_tx_interruptEv+0x34>
+ 3be:	00 c0       	rjmp	.+0      	; 0x3c0 <_ZN6X10_TX16x10_tx_interruptEv+0x3a>
+ 3c0:	00 00       	nop
+
+			_delay_us(1000);	//(eller brug en timer? evt. watchdog?)
+		
+			TCCR1A &= ~(0b11000000);		//deaktiver timer output
+ 3c2:	88 81       	ld	r24, Y
+ 3c4:	8f 73       	andi	r24, 0x3F	; 63
+ 3c6:	88 83       	st	Y, r24
+			TCCR1B &= ~(0b00000111);		//deaktiver timer clock
+ 3c8:	8c 91       	ld	r24, X
+ 3ca:	88 7f       	andi	r24, 0xF8	; 248
+ 3cc:	8c 93       	st	X, r24
+		}
+	
+		if ( burstIndex_ >= 15) {
+ 3ce:	80 89       	ldd	r24, Z+16	; 0x10
+ 3d0:	91 89       	ldd	r25, Z+17	; 0x11
+ 3d2:	8f 30       	cpi	r24, 0x0F	; 15
+ 3d4:	91 05       	cpc	r25, r1
+ 3d6:	24 f0       	brlt	.+8      	; 0x3e0 <_ZN6X10_TX16x10_tx_interruptEv+0x5a>
+			burstIndex_ = 0;
+ 3d8:	11 8a       	std	Z+17, r1	; 0x11
+ 3da:	10 8a       	std	Z+16, r1	; 0x10
+			dataReady_ = 0;
+ 3dc:	12 8a       	std	Z+18, r1	; 0x12
+ 3de:	03 c0       	rjmp	.+6      	; 0x3e6 <_ZN6X10_TX16x10_tx_interruptEv+0x60>
+		}
+		else {
+			burstIndex_++;
+ 3e0:	01 96       	adiw	r24, 0x01	; 1
+ 3e2:	91 8b       	std	Z+17, r25	; 0x11
+ 3e4:	80 8b       	std	Z+16, r24	; 0x10
+		}
+	}
+		
+	EIFR = 0b00000001;			//Clear interrupt flags
+ 3e6:	81 e0       	ldi	r24, 0x01	; 1
+ 3e8:	8c bb       	out	0x1c, r24	; 28
+	EIMSK = 0b00000001;			//Enable INT0
+ 3ea:	8d bb       	out	0x1d, r24	; 29
+ 3ec:	df 91       	pop	r29
+ 3ee:	cf 91       	pop	r28
+ 3f0:	08 95       	ret
+
+000003f2 <main>:
+#include "X10_TX.h"
+
+static volatile char state = 'I';	// Arduino state options:		'I' -> Idle 		'D' -> DE2 communication		'P' -> PC communication 
+X10_TX X10TX_obj;
+int main()
+{
+ 3f2:	cf 93       	push	r28
+ 3f4:	df 93       	push	r29
+ 3f6:	cd b7       	in	r28, 0x3d	; 61
+ 3f8:	de b7       	in	r29, 0x3e	; 62
+ 3fa:	2a 97       	sbiw	r28, 0x0a	; 10
+ 3fc:	0f b6       	in	r0, 0x3f	; 63
+ 3fe:	f8 94       	cli
+ 400:	de bf       	out	0x3e, r29	; 62
+ 402:	0f be       	out	0x3f, r0	; 63
+ 404:	cd bf       	out	0x3d, r28	; 61
+	sei();				// Enable Interrupt
+ 406:	78 94       	sei
+	DE2 DE2board;		// DE-2 Board => UART 1
+ 408:	ce 01       	movw	r24, r28
+ 40a:	01 96       	adiw	r24, 0x01	; 1
+ 40c:	9b de       	rcall	.-714    	; 0x144 <_ZN3DE2C1Ev>
+	PC myPC;			// PC		  => UART 0
+ 40e:	ce 01       	movw	r24, r28
+ 410:	06 96       	adiw	r24, 0x06	; 6
+ 412:	fa de       	rcall	.-524    	; 0x208 <_ZN2PCC1Ev>
+	PORTB = 0b11100111;
+ 414:	87 ee       	ldi	r24, 0xE7	; 231
+ 416:	85 b9       	out	0x05, r24	; 5
+		PORTB = DE2board.getPassword();
+		if (state == 'D')							// DE-2 Board Communication
+		{	
+			cli();											// Disable Interrupt
+
+			int rxData = UDR1;								// Password attempt from DE2-board
+ 418:	0f 2e       	mov	r0, r31
+ 41a:	fe ec       	ldi	r31, 0xCE	; 206
+ 41c:	ef 2e       	mov	r14, r31
+ 41e:	f1 2c       	mov	r15, r1
+ 420:	f0 2d       	mov	r31, r0
+			DE2board.checkPassword(rxData);					// Check Password
+			PORTB = rxData; 								// --- LED test ---
+			state = 'I';									// return to Idle
+ 422:	09 e4       	ldi	r16, 0x49	; 73
+		}	
+		if (state == 'P')							// PC Communication
+		{
+			cli();											// Disable Interrupt
+
+			char choice = UDR0;								// Operation choice PC
+ 424:	0f 2e       	mov	r0, r31
+ 426:	f6 ec       	ldi	r31, 0xC6	; 198
+ 428:	cf 2e       	mov	r12, r31
+ 42a:	d1 2c       	mov	r13, r1
+ 42c:	f0 2d       	mov	r31, r0
+	char adress;
+	char command;
+	
+	while(1)
+	{
+		PORTB = DE2board.getPassword();
+ 42e:	ce 01       	movw	r24, r28
+ 430:	01 96       	adiw	r24, 0x01	; 1
+ 432:	a1 de       	rcall	.-702    	; 0x176 <_ZNK3DE211getPasswordEv>
+ 434:	85 b9       	out	0x05, r24	; 5
+		if (state == 'D')							// DE-2 Board Communication
+ 436:	80 91 00 02 	lds	r24, 0x0200	; 0x800200 <__DATA_REGION_ORIGIN__>
+ 43a:	84 34       	cpi	r24, 0x44	; 68
+ 43c:	59 f4       	brne	.+22     	; 0x454 <__LOCK_REGION_LENGTH__+0x54>
+		{	
+			cli();											// Disable Interrupt
+ 43e:	f8 94       	cli
+
+			int rxData = UDR1;								// Password attempt from DE2-board
+ 440:	f7 01       	movw	r30, r14
+ 442:	10 81       	ld	r17, Z
+			DE2board.checkPassword(rxData);					// Check Password
+ 444:	61 2f       	mov	r22, r17
+ 446:	ce 01       	movw	r24, r28
+ 448:	01 96       	adiw	r24, 0x01	; 1
+ 44a:	9b de       	rcall	.-714    	; 0x182 <_ZN3DE213checkPasswordEc>
+			PORTB = rxData; 								// --- LED test ---
+ 44c:	15 b9       	out	0x05, r17	; 5
+			state = 'I';									// return to Idle
+ 44e:	00 93 00 02 	sts	0x0200, r16	; 0x800200 <__DATA_REGION_ORIGIN__>
+			sei();											// Enable Interrupt
+ 452:	78 94       	sei
+		}	
+		if (state == 'P')							// PC Communication
+ 454:	80 91 00 02 	lds	r24, 0x0200	; 0x800200 <__DATA_REGION_ORIGIN__>
+ 458:	80 35       	cpi	r24, 0x50	; 80
+ 45a:	49 f7       	brne	.-46     	; 0x42e <__LOCK_REGION_LENGTH__+0x2e>
+		{
+			cli();											// Disable Interrupt
+ 45c:	f8 94       	cli
+
+			char choice = UDR0;								// Operation choice PC
+ 45e:	f6 01       	movw	r30, r12
+			if ( myPC.UnitTestRequest(choice) )				// Unit Test Operation
+ 460:	10 81       	ld	r17, Z
+ 462:	61 2f       	mov	r22, r17
+ 464:	ce 01       	movw	r24, r28
+ 466:	06 96       	adiw	r24, 0x06	; 6
+ 468:	14 df       	rcall	.-472    	; 0x292 <_ZNK2PC15UnitTestRequestEc>
+ 46a:	88 23       	and	r24, r24
+ 46c:	79 f0       	breq	.+30     	; 0x48c <__LOCK_REGION_LENGTH__+0x8c>
+			{
+				
+				myPC.unitTest(adress, command);	
+ 46e:	ae 01       	movw	r20, r28
+ 470:	46 5f       	subi	r20, 0xF6	; 246
+ 472:	5f 4f       	sbci	r21, 0xFF	; 255
+ 474:	be 01       	movw	r22, r28
+ 476:	67 5f       	subi	r22, 0xF7	; 247
+ 478:	7f 4f       	sbci	r23, 0xFF	; 255
+ 47a:	ce 01       	movw	r24, r28
+ 47c:	06 96       	adiw	r24, 0x06	; 6
+ 47e:	e2 de       	rcall	.-572    	; 0x244 <_ZN2PC8unitTestERcS0_>
+		sei();
+ 480:	78 94       	sei
+				X10TX_obj.transmit(adress, command);
+ 482:	4a 85       	ldd	r20, Y+10	; 0x0a
+ 484:	69 85       	ldd	r22, Y+9	; 0x09
+ 486:	82 e0       	ldi	r24, 0x02	; 2
+ 488:	92 e0       	ldi	r25, 0x02	; 2
+ 48a:	3a df       	rcall	.-396    	; 0x300 <_ZN6X10_TX8transmitEcc>
+										// Perform Unit test
+			}	
+			if ( myPC.passwordRequest(choice) )				// Change Password Operation
+ 48c:	61 2f       	mov	r22, r17
+ 48e:	ce 01       	movw	r24, r28
+ 490:	06 96       	adiw	r24, 0x06	; 6
+ 492:	f9 de       	rcall	.-526    	; 0x286 <_ZNK2PC15passwordRequestEc>
+ 494:	88 23       	and	r24, r24
+ 496:	61 f0       	breq	.+24     	; 0x4b0 <__LOCK_REGION_LENGTH__+0xb0>
+			{
+				char newPassword = myPC.changePassword();	// Get a new Password	
+ 498:	ce 01       	movw	r24, r28
+ 49a:	06 96       	adiw	r24, 0x06	; 6
+ 49c:	ea de       	rcall	.-556    	; 0x272 <_ZN2PC14changePasswordEv>
+ 49e:	18 2f       	mov	r17, r24
+				DE2board.setPassword(newPassword);			// Change DE-2 Password
+ 4a0:	68 2f       	mov	r22, r24
+ 4a2:	ce 01       	movw	r24, r28
+ 4a4:	01 96       	adiw	r24, 0x01	; 1
+ 4a6:	6a de       	rcall	.-812    	; 0x17c <_ZN3DE211setPasswordEc>
+ 4a8:	61 2f       	mov	r22, r17
+				myPC.sendFeedback(newPassword);				// Confirm the new password
+ 4aa:	ce 01       	movw	r24, r28
+ 4ac:	06 96       	adiw	r24, 0x06	; 6
+ 4ae:	e3 de       	rcall	.-570    	; 0x276 <_ZNK2PC12sendFeedbackEc>
+ 4b0:	00 93 00 02 	sts	0x0200, r16	; 0x800200 <__DATA_REGION_ORIGIN__>
+			}
+			state = 'I';									// return to Idle
+ 4b4:	78 94       	sei
+ 4b6:	bb cf       	rjmp	.-138    	; 0x42e <__LOCK_REGION_LENGTH__+0x2e>
+
+000004b8 <__vector_36>:
+			sei();											// Enable Interrupt
+ 4b8:	1f 92       	push	r1
+ 4ba:	0f 92       	push	r0
+return 0;
+}
+
+
+ISR(USART1_RX_vect) 	// DE-2 Board
+{
+ 4bc:	0f b6       	in	r0, 0x3f	; 63
+ 4be:	0f 92       	push	r0
+ 4c0:	11 24       	eor	r1, r1
+ 4c2:	8f 93       	push	r24
+	state = 'D';
+ 4c4:	84 e4       	ldi	r24, 0x44	; 68
+ 4c6:	80 93 00 02 	sts	0x0200, r24	; 0x800200 <__DATA_REGION_ORIGIN__>
+	PORTB = 0b00011000; 		
+ 4ca:	88 e1       	ldi	r24, 0x18	; 24
+ 4cc:	85 b9       	out	0x05, r24	; 5
+}
+ 4ce:	8f 91       	pop	r24
+ 4d0:	0f 90       	pop	r0
+ 4d2:	0f be       	out	0x3f, r0	; 63
+ 4d4:	0f 90       	pop	r0
+ 4d6:	1f 90       	pop	r1
+ 4d8:	18 95       	reti
+
+000004da <__vector_25>:
+
+ISR(USART0_RX_vect) 	// PC
+{
+ 4da:	1f 92       	push	r1
+ 4dc:	0f 92       	push	r0
+ 4de:	0f b6       	in	r0, 0x3f	; 63
+ 4e0:	0f 92       	push	r0
+ 4e2:	11 24       	eor	r1, r1
+ 4e4:	8f 93       	push	r24
+	state = 'P';
+ 4e6:	80 e5       	ldi	r24, 0x50	; 80
+ 4e8:	80 93 00 02 	sts	0x0200, r24	; 0x800200 <__DATA_REGION_ORIGIN__>
+	PORTB = 0b00111100;
+ 4ec:	8c e3       	ldi	r24, 0x3C	; 60
+ 4ee:	85 b9       	out	0x05, r24	; 5
+}
+ 4f0:	8f 91       	pop	r24
+ 4f2:	0f 90       	pop	r0
+ 4f4:	0f be       	out	0x3f, r0	; 63
+ 4f6:	0f 90       	pop	r0
+ 4f8:	1f 90       	pop	r1
+ 4fa:	18 95       	reti
+
+000004fc <__vector_1>:
+
+ISR(INT0_vect) {
+ 4fc:	1f 92       	push	r1
+ 4fe:	0f 92       	push	r0
+ 500:	0f b6       	in	r0, 0x3f	; 63
+ 502:	0f 92       	push	r0
+ 504:	11 24       	eor	r1, r1
+ 506:	0b b6       	in	r0, 0x3b	; 59
+ 508:	0f 92       	push	r0
+ 50a:	2f 93       	push	r18
+ 50c:	3f 93       	push	r19
+ 50e:	4f 93       	push	r20
+ 510:	5f 93       	push	r21
+ 512:	6f 93       	push	r22
+ 514:	7f 93       	push	r23
+ 516:	8f 93       	push	r24
+ 518:	9f 93       	push	r25
+ 51a:	af 93       	push	r26
+ 51c:	bf 93       	push	r27
+ 51e:	ef 93       	push	r30
+ 520:	ff 93       	push	r31
+	
+	X10TX_obj.x10_tx_interrupt();
+ 522:	82 e0       	ldi	r24, 0x02	; 2
+ 524:	92 e0       	ldi	r25, 0x02	; 2
+ 526:	2f df       	rcall	.-418    	; 0x386 <_ZN6X10_TX16x10_tx_interruptEv>
+ 528:	ff 91       	pop	r31
+ 52a:	ef 91       	pop	r30
+ 52c:	bf 91       	pop	r27
+ 52e:	af 91       	pop	r26
+ 530:	9f 91       	pop	r25
+ 532:	8f 91       	pop	r24
+ 534:	7f 91       	pop	r23
+ 536:	6f 91       	pop	r22
+ 538:	5f 91       	pop	r21
+ 53a:	4f 91       	pop	r20
+ 53c:	3f 91       	pop	r19
+ 53e:	2f 91       	pop	r18
+ 540:	0f 90       	pop	r0
+ 542:	0b be       	out	0x3b, r0	; 59
+ 544:	0f 90       	pop	r0
+ 546:	0f be       	out	0x3f, r0	; 63
+ 548:	0f 90       	pop	r0
+ 54a:	1f 90       	pop	r1
+ 54c:	18 95       	reti
+
+0000054e <_GLOBAL__sub_I_X10TX_obj>:
+#include "DE2.h"
+#include "PC.h"
+#include "X10_TX.h"
+
+static volatile char state = 'I';	// Arduino state options:		'I' -> Idle 		'D' -> DE2 communication		'P' -> PC communication 
+X10_TX X10TX_obj;
+ 54e:	82 e0       	ldi	r24, 0x02	; 2
+ 550:	92 e0       	ldi	r25, 0x02	; 2
+ 552:	a6 ce       	rjmp	.-692    	; 0x2a0 <_ZN6X10_TXC1Ev>
+ 554:	08 95       	ret
+
+00000556 <__tablejump2__>:
+ 556:	ee 0f       	add	r30, r30
+ 558:	ff 1f       	adc	r31, r31
+ 55a:	88 1f       	adc	r24, r24
+ 55c:	8b bf       	out	0x3b, r24	; 59
+ 55e:	07 90       	elpm	r0, Z+
+ 560:	f6 91       	elpm	r31, Z
+ 562:	e0 2d       	mov	r30, r0
+ 564:	19 94       	eijmp
+
+00000566 <_exit>:
+ 566:	f8 94       	cli
+
+00000568 <__stop_program>:
+ 568:	ff cf       	rjmp	.-2      	; 0x568 <__stop_program>
