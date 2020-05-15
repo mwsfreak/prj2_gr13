@@ -1,5 +1,5 @@
 /* 
-* X10_TX.cpp
+* main.cpp
 *
 * Created: 13-05-2020 22:01:26
 * Author: Magnus Bisgård Franks
