@@ -38,7 +38,7 @@ SUBDIRS :=
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../../../../X10_TX/X10_TX.cpp \
-../main_x10tx_test.cpp
+../X10_TX_test.cpp
 
 
 PREPROCESSING_SRCS += 
@@ -49,19 +49,19 @@ ASM_SRCS +=
 
 OBJS +=  \
 X10_TX.o \
-main_x10tx_test.o
+X10_TX_test.o
 
 OBJS_AS_ARGS +=  \
 X10_TX.o \
-main_x10tx_test.o
+X10_TX_test.o
 
 C_DEPS +=  \
 X10_TX.d \
-main_x10tx_test.d
+X10_TX_test.d
 
 C_DEPS_AS_ARGS +=  \
 X10_TX.d \
-main_x10tx_test.d
+X10_TX_test.d
 
 OUTPUT_FILE_PATH +=X10_TX_test.elf
 
@@ -84,7 +84,7 @@ LINKER_SCRIPT_DEP+=
 	@echo Finished building: $<
 	
 
-./main_x10tx_test.o: .././main_x10tx_test.cpp
+./X10_TX_test.o: .././X10_TX_test.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../../../../X10_TX"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

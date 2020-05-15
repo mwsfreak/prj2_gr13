@@ -4,5 +4,5 @@
 
 ..\..\..\X10_TX\X10_TX.cpp
 
-main_x10tx_test.cpp
+X10_TX_test.cpp
 
