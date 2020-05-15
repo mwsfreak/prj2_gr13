@@ -1,0 +1,16 @@
+
+State Machine - |uart_tester|LCDautoSend2L:lcd|LCD
+Name LCD.toggleD2 LCD.toggleD1 LCD.writeData LCD.toggleC2 LCD.toggleC1 LCD.writeCommand LCD.toggleLine2 LCD.toggleLine1 LCD.writeNewLine LCD.toggleW2 LCD.toggleW1 LCD.writeWelcome LCD.Idle 
+LCD.Idle 0 0 0 0 0 0 0 0 0 0 0 0 0 
+LCD.writeWelcome 0 0 0 0 0 0 0 0 0 0 0 1 1 
+LCD.toggleW1 0 0 0 0 0 0 0 0 0 0 1 0 1 
+LCD.toggleW2 0 0 0 0 0 0 0 0 0 1 0 0 1 
+LCD.writeNewLine 0 0 0 0 0 0 0 0 1 0 0 0 1 
+LCD.toggleLine1 0 0 0 0 0 0 0 1 0 0 0 0 1 
+LCD.toggleLine2 0 0 0 0 0 0 1 0 0 0 0 0 1 
+LCD.writeCommand 0 0 0 0 0 1 0 0 0 0 0 0 1 
+LCD.toggleC1 0 0 0 0 1 0 0 0 0 0 0 0 1 
+LCD.toggleC2 0 0 0 1 0 0 0 0 0 0 0 0 1 
+LCD.writeData 0 0 1 0 0 0 0 0 0 0 0 0 1 
+LCD.toggleD1 0 1 0 0 0 0 0 0 0 0 0 0 1 
+LCD.toggleD2 1 0 0 0 0 0 0 0 0 0 0 0 1 

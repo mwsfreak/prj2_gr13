@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -5.382
+TNS   : -284.038
+
+Type  : Slow Model Setup 'uart:uut|baud_rate_gen:BaudRate|clk_out'
+Slack : -4.331
+TNS   : -279.305
+
+Type  : Slow Model Setup 'LCDautoSend2L:lcd|baud_rate_gen:BaudRateGen|clk_out'
+Slack : -3.028
+TNS   : -56.407
+
+Type  : Slow Model Hold 'LCDautoSend2L:lcd|baud_rate_gen:BaudRateGen|clk_out'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'uart:uut|baud_rate_gen:BaudRate|clk_out'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : 0.514
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -67.380
+
+Type  : Slow Model Minimum Pulse Width 'uart:uut|baud_rate_gen:BaudRate|clk_out'
+Slack : -0.500
+TNS   : -76.000
+
+Type  : Slow Model Minimum Pulse Width 'LCDautoSend2L:lcd|baud_rate_gen:BaudRateGen|clk_out'
+Slack : -0.500
+TNS   : -29.000
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -1.972
+TNS   : -99.957
+
+Type  : Fast Model Setup 'uart:uut|baud_rate_gen:BaudRate|clk_out'
+Slack : -1.434
+TNS   : -85.581
+
+Type  : Fast Model Setup 'LCDautoSend2L:lcd|baud_rate_gen:BaudRateGen|clk_out'
+Slack : -0.823
+TNS   : -11.461
+
+Type  : Fast Model Hold 'LCDautoSend2L:lcd|baud_rate_gen:BaudRateGen|clk_out'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'uart:uut|baud_rate_gen:BaudRate|clk_out'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : 0.236
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -67.380
+
+Type  : Fast Model Minimum Pulse Width 'uart:uut|baud_rate_gen:BaudRate|clk_out'
+Slack : -0.500
+TNS   : -76.000
+
+Type  : Fast Model Minimum Pulse Width 'LCDautoSend2L:lcd|baud_rate_gen:BaudRateGen|clk_out'
+Slack : -0.500
+TNS   : -29.000
+
+------------------------------------------------------------
