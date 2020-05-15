@@ -18,9 +18,19 @@ X10_TX X10TX_obj;
 int main(void) {
 	
 	while(1) {
-		X10TX_obj.transmit(1, 1);
-		
+		X10TX_obj.transmit(0b10, 0b0010);
+	
 		_delay_ms(1000);
+		X10TX_obj.transmit(0b10, 0b0001);
+		_delay_ms(1000);
+		X10TX_obj.transmit(0b10, 0b1001);
+		_delay_ms(1000);
+		X10TX_obj.transmit(0b10, 0b1101);
+		_delay_ms(1000);
+		X10TX_obj.transmit(0b10, 0b1110);
+		_delay_ms(1000);
+		
+		
 		
 		
 	}
