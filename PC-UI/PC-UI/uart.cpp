@@ -19,9 +19,9 @@ uart::uart()
 	hComm_ = CreateFile(L"\\\\.\\COM3", GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
 	// Print communication status
 	if (hComm_ == INVALID_HANDLE_VALUE)
-		cout << "Error in opening serial port" << endl;
+		cout << "          Error in opening serial port" << endl;
 	else
-		cout << "opening serial port successful" << endl;
+		cout << "          opening serial port successful" << endl;
 	// Initializing DCB structure	- with UART settings
 	DCB dcbSerialParams = { 0 };						
 	dcbSerialParams.DCBlength = sizeof(dcbSerialParams);
@@ -44,9 +44,10 @@ void uart::setNewUserPassword()
 	system("cls");
 	sendArduionoCommand(setPassword_);
 	// Get new password
-	cout << "Insert a series of 8  '1' and '0' as the new password:" << endl;
+	cout << "     Insert a series of 8  '1' and '0' as the new password:" << endl;
 	cin.clear();
 	string userInput;
+	cout << "     "; 
 	cin >> userInput;
 	// Binary ASCII to int
 	char newPassword = 0;
@@ -54,36 +55,58 @@ void uart::setNewUserPassword()
 		newPassword = newPassword + pow(2 * (userInput.at(size_t) == '1' ? 1 : 0), size_t);
 
 	// Print new Password
-	cout << endl << endl << "new password is " << stoi(userInput) << " as decimal " << newPassword << endl << endl;
+	cout << endl << endl << "     new password is " << stoi(userInput) << " as decimal " << newPassword << endl << endl;
 	// Send new defind user password
 	sendArduionoCommand(newPassword);
 	system("cls");
 	// Recive confirmation from Arduino
 	char response = getArduinoResonse();
 
-	cout << endl << "User input was " << stoi(userInput) << endl << endl;
+	cout << endl << "     User input was " << stoi(userInput) << endl << endl;
 }
 
 void uart::unitTest()
 {
-	system("cls");
-	sendArduionoCommand(unitTest_);
-	cout << "No test available...!" << endl << endl;
 
-	cout << "-------  To X10 Unit Test  -------" << endl << endl;
-	cout << "Press a number, to choose a device to test:" << endl;
-	cout << "1. Lamp 1 - with dimming" << endl;
-	cout << "2. Lamp 2 - I/O" << endl;
-	cout << "3. Curtain - Up/Down" << endl;
-	cout << "4. MP3 - Play song" << endl;
-	cout << "5. Exit Test" << endl;
-	int device;
-	int command;
-	cin >> device;
-	sendArduionoCommand(device);
-	cout << "write command:  ";
-	cin >> command;
-	sendArduionoCommand(command);
+		system("cls");
+		sendArduionoCommand(unitTest_);
+		cout << "No test available...!" << endl << endl;
+		cout << endl << "     ------------------------------------------------------------" << endl;
+		cout <<  "     --------------------  To X10 Unit Test  --------------------" << endl;
+		cout  << "     ------------------------------------------------------------" << endl << endl;
+		cout << "     Press a number, to choose a device to test:" << endl;
+		cout << "     1. Lamp 1 - with dimming" << endl;
+		cout << "     2. Lamp 2 - I/O" << endl;
+		cout << "     3. Curtain - Up/Down" << endl;
+		cout << "     4. MP3 - Play song" << endl;
+		cout << "     99. Exit Test" << endl;
+		int device;
+		cout << "     ";
+		cin >> device;
+		sendArduionoCommand(device);
+
+				system("cls");
+				cout << "No test available...!" << endl << endl;
+				cout << endl << "     ------------------------------------------------------------" << endl;
+				cout << "     --------------------  To X10 Unit opions  ------------------" << endl;
+				cout << "     ------------------------------------------------------------" << endl << endl;
+				cout << "     Press a number, to choose a device to test:" << endl;
+				cout << "     1. Off" << endl;
+				cout << "     2. On" << endl;
+				cout << "     3. Pause" << endl;
+				cout << "     8. 12.5% active" << endl;
+				cout << "     9. 25% active" << endl;
+				cout << "     10. 37.5% active" << endl;
+				cout << "     11. 50% active" << endl;
+				cout << "     12. 62.5% active" << endl;
+				cout << "     13. 75% active" << endl;
+				cout << "     14. 87.5% active" << endl;
+				cout << "     15. 100% active" << endl;
+				cout << "     99. Exit test" << endl;
+				int command;
+				cout << "     ";
+				cin >> command;
+				sendArduionoCommand(command);
 }
 
 void uart::sendArduionoCommand(int command)

@@ -10,6 +10,8 @@
 #include<windows.h>
 #include<stdio.h>
 #include<iostream>
+#include<iomanip>
+#include<conio.h>
 #include<string>
 #include"uart.h"
 using namespace std;
