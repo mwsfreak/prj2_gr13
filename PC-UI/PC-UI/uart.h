@@ -14,8 +14,8 @@ public:
 	uart();
 	void setNewUserPassword();
 	void unitTest();
-	void sendArduionoCommand(int);
-	int getArduinoResonse();
+	void sendArduinoCommand(int);
+	int getArduinoResponse();
 	~uart();
 private:
 	int setPassword_;

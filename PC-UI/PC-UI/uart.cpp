@@ -42,7 +42,7 @@ void uart::setNewUserPassword()
 {
 	/// Set Arduino ready to change password
 	system("cls");
-	sendArduionoCommand(setPassword_);
+	sendArduinoCommand(setPassword_);
 	// Get new password
 	cout << "     Insert a series of 8  '1' and '0' as the new password:" << endl;
 	cin.clear();
@@ -51,16 +51,16 @@ void uart::setNewUserPassword()
 	cin >> userInput;
 	// Binary ASCII to int
 	char newPassword = 0;
-	for (int size_t = 0; size_t < 8; size_t++)
-		newPassword = newPassword + pow(2 * (userInput.at(size_t) == '1' ? 1 : 0), size_t);
+	for (size_t i = 0; i < 8; i++)
+		newPassword = newPassword + pow(2 * (userInput.at(i) == '1' ? 1 : 0), i);
 
 	// Print new Password
 	cout << endl << endl << "     new password is " << stoi(userInput) << " as decimal " << newPassword << endl << endl;
-	// Send new defind user password
-	sendArduionoCommand(newPassword);
+	// Send new defined user password
+	sendArduinoCommand(newPassword);
 	system("cls");
-	// Recive confirmation from Arduino
-	char response = getArduinoResonse();
+	// Receive confirmation from Arduino
+	char response = getArduinoResponse();
 
 	cout << endl << "     User input was " << stoi(userInput) << endl << endl;
 }
@@ -69,7 +69,7 @@ void uart::unitTest()
 {
 
 		system("cls");
-		sendArduionoCommand(unitTest_);
+		sendArduinoCommand(unitTest_);
 		cout << "No test available...!" << endl << endl;
 		cout << endl << "     ------------------------------------------------------------" << endl;
 		cout <<  "     --------------------  To X10 Unit Test  --------------------" << endl;
@@ -83,7 +83,7 @@ void uart::unitTest()
 		int device;
 		cout << "     ";
 		cin >> device;
-		sendArduionoCommand(device);
+		sendArduinoCommand(device);
 
 				system("cls");
 				cout << "No test available...!" << endl << endl;
@@ -106,10 +106,10 @@ void uart::unitTest()
 				int command;
 				cout << "     ";
 				cin >> command;
-				sendArduionoCommand(command);
+				sendArduinoCommand(command);
 }
 
-void uart::sendArduionoCommand(int command)
+void uart::sendArduinoCommand(int command)
 {
 	int lpBuffer[1] = { command };
 	DWORD dNoOfBytesWritten;			// No of bytes written to the port
@@ -120,7 +120,7 @@ void uart::sendArduionoCommand(int command)
 		NULL);
 }
 
-int uart::getArduinoResonse()
+int uart::getArduinoResponse()
 {
 	//// RECIEVE DATA
 	int response; // Arduino response

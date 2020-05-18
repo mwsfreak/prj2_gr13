@@ -1,2 +1,5 @@
 ﻿  Source.cpp
+  uart.cpp
+C:\Users\mfran\Documents\GitHub\prj2_gr13\PC-UI\PC-UI\uart.cpp(55,29): warning C4244: '=': conversion from 'double' to 'char', possible loss of data
+  Generating Code...
   PC-UI.vcxproj -> C:\Users\mfran\Documents\GitHub\prj2_gr13\PC-UI\Debug\PC-UI.exe
