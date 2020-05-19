@@ -19,7 +19,6 @@ class X10_RX
 	private:
 	bool startBuffer_[8];
 	bool rawData_[8];
-	bool convertedData_[4];
 	char convertedDataChar_;
 	bool receivingData_;
 	int bitCnt_;
