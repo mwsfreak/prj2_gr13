@@ -42,13 +42,45 @@ int main(void)
 		{
 			dataChar = lampReceiver.getData();
 			
-			if (dataChar == (0b00000001))
+			if (dataChar == (0b0001))
 			{
 				myLamp.turnOffLED();
 			}
-			else if (dataChar == (0b00000010))
+			else if (dataChar == (0b0010))
 			{
 				myLamp.turnOnLED();
+			}
+			else if (dataChar == (0b1000))
+			{
+				myLamp.setDimValue(32); // 255*0,125=32
+			}
+			else if (dataChar == (0b1001))
+			{
+				myLamp.setDimValue(64); //255*0,25=64
+			}
+			else if (dataChar == (0b1010))
+			{
+				myLamp.setDimValue(96); //255*0,375=96
+			}
+			else if (dataChar == (0b1011))
+			{
+				myLamp.setDimValue(128); // 255*0,5=128
+			}
+			else if (dataChar == (0b1100))
+			{
+				myLamp.setDimValue(159); // 255*0,625=159
+			}
+			else if (dataChar == (0b1101))
+			{
+				myLamp.setDimValue(191); // 255*0,75=191
+			}
+			else if (dataChar == (0b1110))
+			{
+				myLamp.setDimValue(223); // 255*0,875=223
+			}
+			else if (dataChar == (0b1111))
+			{
+				myLamp.setDimValue(255); //255*1,00=255
 			}
 			
 			newDataReady = false;

@@ -21,11 +21,6 @@ X10_RX::X10_RX(int address)
 	{
 		rawData_[i] = false;
 	}
-	// convertedData initialiseres
-	for (int i = 0; i < 4; i++)
-	{
-		convertedData_[i] = false;
-	}
 	// startBuffer initialiseres
 	for (int i = 0; i < 8; i++)
 	{

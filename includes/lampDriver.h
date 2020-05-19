@@ -8,15 +8,15 @@
 
 #ifndef LAMPDRIVER_H_
 #define LAMPDRIVER_H_
-
 class lampDriver
 {
 public:
 	lampDriver();
 	void turnOnLED();
 	void turnOffLED();
+	void setDimValue(int dimValue);
 private:
-	
+	int dimValue_;
 };
 
 
