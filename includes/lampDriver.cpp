@@ -23,7 +23,7 @@ lampDriver::lampDriver()
 
 void lampDriver::turnOnLED()
 {
-	OCR2A = (((double)255*(double)100)/(double)dimValue_);
+	OCR2A = dimValue_;
 	return;
 }
 
@@ -39,7 +39,7 @@ void lampDriver::setDimValue(int dimValue)
 	if(dimValue >= 0 && dimValue <= 100)
 	{
 		dimValue_ = dimValue;
-		OCR2A = (((double)255*(double)100)/(double)dimValue_);
+		OCR2A = dimValue_;
 	}
 	
 	return;
