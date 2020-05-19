@@ -36,7 +36,7 @@ void lampDriver::turnOffLED()
 
 void lampDriver::setDimValue(int dimValue)
 {
-	if(dimValue >= 0 && dimValue <= 100)
+	if(dimValue >= 0 && dimValue <= 255)
 	{
 		dimValue_ = dimValue;
 		OCR2A = dimValue_;
